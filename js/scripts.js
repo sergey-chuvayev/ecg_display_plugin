@@ -1,12 +1,12 @@
 $(function() {
 
-	ecg_lead_ii = [];
+	ecg = [];
 
-	for(i=0; i<data.ecg.length; i++) {
+	for(i=0; i<data.length; i++) {
 		
-		ecg_lead_ii.push({
-			measured: data.ecg[i].measured,
-			lead_ii: data.ecg[i].lead_ii
+		ecg.push({
+			x: i,
+			y: data[i]
 		});
 		
 	}
@@ -20,6 +20,6 @@ $(function() {
 		height: 150
 	}
 
-	$('.ecg_container_2').ecgChart(ecg_lead_ii, options);
+	$('.ecg_container').ecgChart(ecg, options);
 
 });
