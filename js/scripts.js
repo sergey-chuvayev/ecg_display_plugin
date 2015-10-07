@@ -13,11 +13,11 @@ $(function() {
 
 	options = {
 		ticks: {
-			x: 20,
-			y: 10
+			x: 22,
+			y: 8
 		},
 		width: 400,
-		height: 200
+		height: 150
 	}
 
 	$('.ecg_container_2').ecgChart(ecg_lead_ii, options);

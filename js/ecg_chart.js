@@ -1,4 +1,4 @@
-$.fn.ecgChart = function(data, options, ecg_label) {
+$.fn.ecgChart = function(data, options) {
 
 	this.empty();
 
@@ -131,22 +131,7 @@ $.fn.ecgChart = function(data, options, ecg_label) {
 			.attr("transform", "translate(" + (MARGINS.left) + ",0)")
 			.call(yAxis());
 
-		var label = datacontainer.append("g")
-								.attr('class','ecg-label')
-								.attr("transform", "translate(" + (MARGINS.left + 10) + "," + (MARGINS.top + 10) + ")");
-
-		label.append("rect")
-			.classed("ecg-label", true)
-			.attr('width', 30)
-			.attr('height', 20);
-
-		label.append('text')
-			.classed('',true)
-			.text(ecg_label)
-			.attr('x',4)
-			.attr('y',15);
-
-
+		
 		var lineFunc = d3.svg.line()
 			.x(function (d) {
 				return xScale(d[propertyNames[0]]);
